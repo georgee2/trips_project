@@ -3,7 +3,7 @@
 import 'package:logo_task/item_model.dart';
 
 class ItemsData {
-  static Future<List<ItemModel>> readDataFromJson() async {
+  static List<ItemModel> readDataFromJson() {
     // final jsonString = await rootBundle.loadString('trips_mock.json');
     final data = {
       "trips": [

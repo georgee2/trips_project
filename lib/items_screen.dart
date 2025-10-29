@@ -18,12 +18,8 @@ class _ItemsScreenState extends State<ItemsScreen> {
   
   @override
   void initState() {
+    items = ItemsData.readDataFromJson();
     super.initState();
-    ItemsData.readDataFromJson().then((data) {
-      setState(() {
-        items = data;
-      });
-    });
   }
 
   @override
