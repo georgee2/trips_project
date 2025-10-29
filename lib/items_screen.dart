@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:logo_task/item_model.dart';
 import 'package:logo_task/items_data.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 import 'item_card.dart';
 
@@ -176,26 +175,23 @@ class _ItemsScreenState extends State<ItemsScreen> {
               ),
               const SizedBox(height: 32),
               Expanded(
-                child: Skeletonizer(
-                  enabled: loading,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width * 0.05),
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: crossAxisCount,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
-                        childAspectRatio: childAspect,
-                      ),
-                      itemCount: items.length,
-                      itemBuilder: (context, index) {
-                        final item = items[index];
-                        return ItemCard(
-                          item: item,
-                          isMobile: width < 800,
-                        );
-                      },
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: crossAxisCount,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: childAspect,
                     ),
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      final item = items[index];
+                      return ItemCard(
+                        item: item,
+                        isMobile: width < 800,
+                      );
+                    },
                   ),
                 ),
               ),
