@@ -19,6 +19,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
   @override
   void initState() {
     ItemsData.readDataFromJson().then((data) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('data have been retrived')));
       setState(() {
         items = data;
       });
@@ -119,7 +120,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Items (${items.length})',
+                      'Items',
                       style: GoogleFonts.inter(
                         fontSize: 28,
                         color: Colors.white,
