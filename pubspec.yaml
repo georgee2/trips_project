@@ -26,4 +26,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/images/
+    - assets/data/trips_mock.json

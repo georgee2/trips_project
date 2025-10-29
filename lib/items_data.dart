@@ -4,7 +4,7 @@ import 'package:logo_task/item_model.dart';
 
 class ItemsData {
   static Future<List<ItemModel>> readDataFromJson() async {
-    final jsonString = await rootBundle.loadString('trips_mock.json');
+    final jsonString = await rootBundle.loadString('assets/data/trips_mock.json');
     final data = jsonDecode(jsonString);
 
     if (data is Map<String, dynamic> && data['trips'] is List) {

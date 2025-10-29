@@ -50,7 +50,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                           Icon(Icons.menu, color: Colors.white, size: 28),
                           SizedBox(width: width * 0.05),
                         ],
-                        Image.asset('assets/logo.png', fit: BoxFit.contain),
+                        Image.asset('assets/images/logo.png', fit: BoxFit.contain),
                       ],
                     ),
                     if(width > 800)
@@ -99,7 +99,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                           margin: const EdgeInsets.symmetric(horizontal: 16),
                         ),
                         const SizedBox(width: 12),
-                        const CircleAvatar(radius: 16, backgroundImage: AssetImage('assets/avatar3.png')),
+                        const CircleAvatar(radius: 16, backgroundImage: AssetImage('assets/images/avatar3.png')),
                         if(width > 800)
                         ...[
                           const SizedBox(width: 12),
