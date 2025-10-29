@@ -14,19 +14,16 @@ class ItemsScreen extends StatefulWidget {
 
 class _ItemsScreenState extends State<ItemsScreen> {
   List<ItemModel> items = [];
-  bool loading = false;
   static const Color amber = Color.fromRGBO(255, 194, 104, 1);
   
   @override
   void initState() {
-    loading = true;
+    super.initState();
     ItemsData.readDataFromJson().then((data) {
       setState(() {
         items = data;
-        loading = false;
       });
     });
-    super.initState();
   }
 
   @override
