@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "757980198657",
+    "project_id": "trips-project-c12c2",
+    "storage_bucket": "trips-project-c12c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757980198657:android:860eaac5551794d1ec0d00",
+        "android_client_info": {
+          "package_name": "com.example.logo_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChSPKaIsXAtGGPRjlcoOU_-3v6I5-pXuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
