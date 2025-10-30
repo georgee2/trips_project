@@ -1,10 +1,12 @@
+import 'package:intl/intl.dart';
+
 class ItemModel {
   final String id;
   final String status;
   final String title;
   final String coverImg;
   final String tasks;
-  final TripDates dates;
+  final String date;
   final List<Participant> participants;
 
   ItemModel({
@@ -13,7 +15,7 @@ class ItemModel {
     required this.title,
     required this.coverImg,
     required this.tasks,
-    required this.dates,
+    required this.date,
     required this.participants,
   });
 
@@ -24,11 +26,27 @@ class ItemModel {
       title: json['title'] ?? '',
       coverImg: json['cover_image'] ?? '',
       tasks: json['unfinished_tasks']?.toString() ?? '0',
-      dates: TripDates.fromJson(json['dates'] ?? {}),
-      participants: (json['participants'] as List<dynamic>? ?? [])
-          .map((e) => Participant.fromJson(e))
-          .toList(),
+      date: formatDates(json['dates']['start'], json['start']['end']),
+      participants: (json['participants'] as List<dynamic>? ?? []).map((e) => Participant.fromJson(e)).toList(),
     );
+  }
+
+  static String formatDates(String start, String end) {
+    try {
+      final DateFormat inputFormat = DateFormat('dd-MM-yyyy');
+      final DateFormat outputFormat = DateFormat('MMM d, yyyy');
+
+      final startDate = inputFormat.parse(start);
+      final endDate = inputFormat.parse(end);
+
+      final nights = endDate.difference(startDate).inDays;
+      final startStr = DateFormat('MMM d').format(startDate);
+      final endStr = outputFormat.format(endDate);
+
+      return '$nights Nights ($startStr - $endStr)';
+    } catch (e) {
+      return '';
+    }
   }
 }
 
