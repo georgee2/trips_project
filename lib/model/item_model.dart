@@ -26,7 +26,7 @@ class ItemModel {
       title: json['title'] ?? '',
       coverImg: json['cover_image'] ?? '',
       tasks: json['unfinished_tasks']?.toString() ?? '0',
-      date: formatDates(json['dates']['start'], json['start']['end']),
+      date: formatDates(json['dates']['start'], json['dates']['end']),
       participants: (json['participants'] as List<dynamic>? ?? []).map((e) => Participant.fromJson(e)).toList(),
     );
   }
